@@ -50,6 +50,30 @@ format:
 * Two-way data binding
 * Event binding
 
+## Event binding example
+
+```{razor code-line-numbers="|5,14-17"}
+@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
+```
+
+
 ## Routing and Layouts
 
 * [Kebab-case](https://developer.mozilla.org/docs/Glossary/Kebab_case) naming convention
