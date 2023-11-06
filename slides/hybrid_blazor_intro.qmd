@@ -21,12 +21,22 @@ format:
 
 ## What is (ASP.NET Core) Blazor？
 
+:::: {.columns}
+
+::: {.column width="50%"}
+
 * Blazor is a **Singla Page Application(SPA)** frammework for building interactive client-side web UI with .NET C# without "*too much*" client-side JavaScript.
 * Component-based architecture
 * Different hosting models:
     * Blazor WebAssembly(Blazor WASM)
         * Blazor Hybrid
     * Blazor Server
+
+::: {.column width="50%"}
+![](./pics/Blazor.png)
+:::
+
+::::
 
 ---
 
@@ -59,22 +69,23 @@ format:
 
 :::: {.columns}
 
-::: {.column width="65%"}
+::: {.column width="50%"}
 
 * The Blazor Hybrid can run on [.NET MAUI(Multi-platform App UI)](https://dotnet.microsoft.com/apps/maui) / [WPF](https://github.com/dotnet/wpf) / [Winform](https://github.com/dotnet/winforms) Native apps.
-* We can use the same Blazor source code to build Web and App.
+* We can use the same Blazor source code to build Web and App.  
+(Reuse UI)
 
 :::
 
-::: {.column width="35%"}
-![*VS 2022 project template*](./pics/BlazorMauiProjectTemplate.png)
+::: {.column width="50%"}
+![*VS 2022 project template*](./pics/BlazorMauiProjectTemplate.png){.r-stretch}
 :::
 
 ::::
 
+## Reuse UI for Web & App via RCL
 
 
-## Reuse UI via RCL
 
 # WebRTC demo project
 
