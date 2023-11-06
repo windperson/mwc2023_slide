@@ -1,7 +1,9 @@
 ---
-title: "Blazor寫一次就討好 \n Web ＆ App 開發"
+title: |
+Blazor寫一次就討好 
+Web ＆ App 開發
 
-author: "老鮑伯"
+author: 老鮑伯
 format:
     # pptx:
     #    reference-doc: ../templates/template.pptx
@@ -50,9 +52,7 @@ A self-contained chunk of user interface (UI), such as a page, dialog, or form.
 
 Includes HTML markup and the processing logic required to inject data or respond to UI events.
 
-:::: {.columns .smaller .scrollable}
-
-::: {.column width="100%"}
+::: {.smaller .scrollable}
 
 - using **`.razor`** file extension:
    - (Optional) routing tag helpers (`@page`) or `@layout` directive
@@ -61,8 +61,6 @@ Includes HTML markup and the processing logic required to inject data or respond
    - `@code` block for C# code
 
 :::
-
-::::
 
 ## Razor components example {.smaller .scrollable}
 
