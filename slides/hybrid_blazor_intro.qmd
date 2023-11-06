@@ -16,11 +16,13 @@ format:
 * Blazor Introduction
 * WebRTC demo project
 
+# Blazor Introduction
+
 ## What is (ASP.NET Core) Blazor？
 
 * Blazor is a **Singla Page Application(SPA)** frammework for building interactive client-side web UI with .NET C# without "*too much*" client-side JavaScript.
 * Component-based architecture
-* Different hosting models
+* Different hosting models:
     * Blazor WebAssembly(Blazor WASM)
         * Blazor Hybrid
     * Blazor Server
@@ -60,7 +62,7 @@ format:
 
 ## Project structure
 
-# EndNote
+# Conclusion
 
 ## Reference
 
