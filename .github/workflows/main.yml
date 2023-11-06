@@ -24,6 +24,13 @@ jobs:
           # uncomment below and fill to pin a version
           # version: SPECIFIC-QUARTO-VERSION-HERE
               
+      # For souce code highlighting
+      # From https://github.com/actions/setup-python
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+      - run: pip install jupyter
       
       # NOTE: If Publishing to GitHub Pages, set the permissions correctly (see top of this yaml)
       - name: Publish to GitHub Pages (and render) 
