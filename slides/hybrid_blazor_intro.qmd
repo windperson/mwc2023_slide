@@ -1,0 +1,70 @@
+---
+title: "Blazor寫一次就討好Web＆App開發"
+author: "老鮑伯"
+format:
+    pptx:
+        reference-doc: ../templates/template.pptx
+    revealjs:
+        slide-tone: true
+        menu:
+            side: right
+---
+
+# Blazor Introduction
+
+## Blazor寫一次就討好Web＆App開發
+
+---
+
+## Balzor 是什麼？
+
+* Blazor is a **Singla Page Application(SPA)** frammework for building interactive client-side web UI with .NET C# without "*too much*" client-side JavaScript.
+* Component-based architecture
+* Different hosting models
+    * Blazor WebAssembly(Blazor WASM)
+        * Blazor Hybrid
+    * Blazor Server
+
+---
+
+## Razor components
+
+## CSS isolation for components
+
+## Data binding
+
+* One-way data binding
+* Two-way data binding
+* Event binding
+
+## Routing and Layouts
+
+* [Kebab-case](https://developer.mozilla.org/docs/Glossary/Kebab_case) naming convention
+
+## Dependency injection
+
+* Use the `@inject` directive to inject services into components.
+* Co-operate with the .NET Core DI container.
+
+## JavaScript interop
+
+* Call JavaScript functions from .NET methods.
+* Call .NET methods from JavaScript functions.
+* Using `[JSImport]` / `[JSExport]` attribute in Blazor WASM.(.NET 7+)
+
+## Blazor Hybrid on .NET MAUI
+
+## Reuse UI via RCL
+
+# WebRTC demo project
+
+## Project structure
+
+# EndNote
+
+## Reference
+
+* [ASP.NET Core Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)
+* [Introduction to WebRTC protocols](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Protocols)
+* [Udemy - AspNetCore Blazor:The Big Picture](https://www.udemy.com/course/aspnet-core-blazor-the-big-picture/)
+* [MS Learn - Build web applications with Blazor](https://learn.microsoft.com/en-us/training/paths/build-web-apps-with-blazor/)
