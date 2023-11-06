@@ -1,5 +1,5 @@
 ---
-title: "Blazor寫一次就討好\r\nWeb＆App開發"
+title: "Blazor寫一次就討好<br/> Web ＆ App 開發"
 author: "老鮑伯"
 format:
     # pptx:
@@ -43,17 +43,22 @@ format:
 
 ::::
 
-## Razor components
+## Razor components {.smaller}
 
-A Razor component is a self-contained chunk of user interface (UI), such as a page, dialog, or form. A component includes HTML markup and the processing logic required to inject data or respond to UI events.
+A self-contained chunk of user interface (UI), such as a page, dialog, or form.  
+Includes HTML markup and the processing logic required to inject data or respond to UI events.
 
-:::: {.smaller}
+:::: {.columns .smaller .scrollable}
 
-* using a `.razor` file extension:
-   * (Optional) routing tag helpers (**`@page`**) or **`@layout`** directive
-   * **`@using`** , **`@implements`**, **`@inherits`**, **`@inject`** for C# lang syntax and DI 
-   * Razor syntax code to present HTML & Razor components (may mixed C# code)
-   * **`@code`** block for C# code
+::: {.column width="100%"}
+
+- using **`.razor`** file extension:
+   - (Optional) routing tag helpers (`@page`) or `@layout` directive
+   - `@using` , `@implements`, `@inherits`, `@inject` for C# lang syntax and DI 
+   - Razor syntax code to present HTML & Razor components (may mixed C# code)
+   - `@code` block for C# code
+
+:::
 
 ::::
 
