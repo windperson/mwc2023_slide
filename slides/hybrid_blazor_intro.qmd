@@ -1,6 +1,7 @@
 ---
-title: | Blazor寫一次就討好 
-| Web ＆ App 開發
+title: |
+Blazor寫一次就討好 
+ Web ＆ App 開發
 author: "老鮑伯"
 format:
     # pptx:
