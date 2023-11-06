@@ -8,6 +8,7 @@ format:
     revealjs:
         width: 1920
         height: 1080
+        margin: 0.3
         slide-tone: false
         theme: simple
         menu:
@@ -26,7 +27,7 @@ format:
 
 **Singla Page Application(SPA)** frammework for building interactive client-side web UI using .NET 6+ C# without "*too much*" client-side JavaScript.
 
-:::: {.columns .smaller}
+:::: {.columns}
 
 ::: {.column width="70%"}
 
@@ -46,7 +47,7 @@ format:
 
 ::::
 
-## Razor components {.smaller .scrollable}
+## Razor components 
 
 A self-contained chunk of user interface (UI), such as a page, dialog, or form.
 
@@ -180,12 +181,12 @@ else
 :::
 
 ::: {.column width="50%"}
-![*VS 2022 project template*](./pics/BlazorMauiProjectTemplate.png){.r-stretch}
+![*VS 2022 project template*](./pics/BlazorMauiProjectTemplate.png)
 :::
 
 ::::
 
-## Reuse UI for Web & App via RCL {.smaller .scrollable}
+## Reuse UI for Web & App via RCL {.scrollable}
 
 :::: {.columns}
 
@@ -197,7 +198,6 @@ By using [Razor Class Library(RCL)](https://learn.microsoft.com/aspnet/core/razo
 
 ::: {.column width="50%"}
 
-::: {.r-stack}
 ![](./pics/Web_and_App_screenshot.png)
 
 ::: {.r-hstack}
@@ -206,13 +206,12 @@ By using [Razor Class Library(RCL)](https://learn.microsoft.com/aspnet/core/razo
 :::
 
 ![](./pics/RCL_project_template.png)
-:::
 
 :::
 
 ::::
 
-## Project setup {.smaller .scrollable}
+## Project setup {.scrollable}
 
 1. 建立MAUI (with Hybrid Blazor)專案
 2. 建立RCL(Razor Class Library)專案，並將其加入MAUI專案的專案引用(Project Reference)
