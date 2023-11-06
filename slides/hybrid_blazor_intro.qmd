@@ -50,9 +50,9 @@ format:
 * Two-way data binding
 * Event binding
 
-## Event binding example
+## Event binding example {.scrollable}
 
-```{razor code-line-numbers="|5,14-17"}
+```razor
 @page "/counter"
 
 <PageTitle>Counter</PageTitle>
