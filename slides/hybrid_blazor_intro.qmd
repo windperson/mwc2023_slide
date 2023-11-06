@@ -6,6 +6,7 @@ format:
     #    reference-doc: ../templates/template.pptx
     revealjs:
         slide-tone: false
+        theme: simple
         menu:
             side: right
 ---
@@ -58,15 +59,15 @@ format:
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="65%"}
 
 * The Blazor Hybrid can run on [.NET MAUI(Multi-platform App UI)](https://dotnet.microsoft.com/apps/maui) / [WPF](https://github.com/dotnet/wpf) / [Winform](https://github.com/dotnet/winforms) Native apps.
 * We can use the same Blazor source code to build Web and App.
 
 :::
 
-::: {.column width="50%"}
-![VS 2022 project template](./pics/BlazorMauiProjectTemplate.png)
+::: {.column width="35%"}
+![*VS 2022 project template*](./pics/BlazorMauiProjectTemplate.png)
 :::
 
 ::::
