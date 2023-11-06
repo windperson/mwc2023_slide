@@ -1,5 +1,5 @@
 ---
-title: "Blazor寫一次就討好Web＆App開發"
+title: "Blazor寫一次就討好\r\nWeb＆App開發"
 author: "老鮑伯"
 format:
     # pptx:
@@ -47,13 +47,15 @@ format:
 
 A Razor component is a self-contained chunk of user interface (UI), such as a page, dialog, or form. A component includes HTML markup and the processing logic required to inject data or respond to UI events.
 
-* Razor syntax for embedding C# code in HTML markup
-* Razor components can be nested, reused, shared among projects
+:::: {.smaller}
+
 * using a `.razor` file extension:
    * (Optional) routing tag helpers (**`@page`**) or **`@layout`** directive
    * **`@using`** , **`@implements`**, **`@inherits`**, **`@inject`** for C# lang syntax and DI 
    * Razor syntax code to present HTML & Razor components (may mixed C# code)
    * **`@code`** block for C# code
+
+::::
 
 ## Razor components example {.smaller .scrollable}
 
@@ -109,7 +111,7 @@ else
 
 ---
 
-:::{.tip}
+:::{.callout-tip}
 
 * Component can consist other child components, and control via *"Parameters"*
 * Component can be nested, reused, shared among projects
@@ -168,7 +170,7 @@ else
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="60%"}
 
 * The Blazor Hybrid can run on [.NET MAUI(Multi-platform App UI)](https://dotnet.microsoft.com/apps/maui) / [WPF](https://github.com/dotnet/wpf) / [Winform](https://github.com/dotnet/winforms) Native apps.
 * We can use the same Blazor source code to build Web and App.  
@@ -176,7 +178,7 @@ else
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 
 ![*VS 2022 project template*](./pics/BlazorMauiProjectTemplate.png){.r-stretch}
 
