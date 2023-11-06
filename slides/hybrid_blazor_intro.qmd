@@ -19,16 +19,16 @@ format:
 
 # Blazor Introduction
 
-## What is (ASP.NET Core) Blazor？
+## What is (ASP.NET Core) Blazor
 
-* Blazor is a **Singla Page Application(SPA)** frammework for building interactive client-side web UI with .NET C# without "*too much*" client-side JavaScript.
+**Singla Page Application(SPA)** frammework for building interactive client-side web UI with .NET C# without "*too much*" client-side JavaScript.
 
 :::: {.columns .smaller}
 
 ::: {.column width="70%"}
 
 * Component-based architecture
-* Different hosting models:
+* Different [hosting models](https://learn.microsoft.com/aspnet/core/blazor/hosting-models):
     * Blazor WebAssembly(Blazor WASM)
         * Blazor Hybrid
     * Blazor Server
