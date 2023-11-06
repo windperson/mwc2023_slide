@@ -2,19 +2,19 @@
 title: "Blazor寫一次就討好Web＆App開發"
 author: "老鮑伯"
 format:
-    pptx:
-        reference-doc: ../templates/template.pptx
+    # pptx:
+    #    reference-doc: ../templates/template.pptx
     revealjs:
-        slide-tone: true
+        slide-tone: false
         menu:
             side: right
 ---
 
-# Blazor Introduction
 
-## Blazor寫一次就討好Web＆App開發
+## Agenda
 
----
+* Blazor Introduction
+* WebRTC demo project
 
 ## Balzor 是什麼？
 
