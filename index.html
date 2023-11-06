@@ -383,6 +383,24 @@
 <li>Event binding</li>
 </ul>
 </section>
+<section id="event-binding-example" class="slide level2">
+<h2>Event binding example</h2>
+<p>```{razor code-line-numbers=“|5,14-17”} <span class="citation" data-cites="page">@page</span> “/counter”</p>
+<p><pagetitle>Counter</pagetitle></p>
+<h1>
+Counter
+</h1>
+<p role="status">
+Current count: <span class="citation" data-cites="currentCount">@currentCount</span>
+</p>
+<p>&lt;button class=“btn btn-primary” <span class="citation" data-cites="onclick">@onclick</span>=“IncrementCount”&gt;Click me</p>
+<p><span class="citation" data-cites="code">@code</span> { private int currentCount = 0;</p>
+<pre><code>private void IncrementCount()
+{
+    currentCount++;
+}</code></pre>
+<p>} ```</p>
+</section>
 <section id="routing-and-layouts" class="slide level2">
 <h2>Routing and Layouts</h2>
 <ul>
