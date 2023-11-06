@@ -52,7 +52,7 @@ format:
 
 ## Event binding example {.scrollable}
 
-```razor
+```{razor}
 @page "/counter"
 
 <PageTitle>Counter</PageTitle>
