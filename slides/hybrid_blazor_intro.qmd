@@ -32,13 +32,15 @@ format:
         * Blazor Hybrid
     * Blazor Server
 
+:::
+
 ::: {.column width="50%"}
-![](./pics/Blazor.png)
+
+![<https://wikipedia.org/wiki/Blazor>](./pics/Blazor.png)
+
 :::
 
 ::::
-
----
 
 ## Razor components
 
@@ -102,7 +104,9 @@ format:
 :::
 
 ::: {.column width="50%"}
+
 ![*VS 2022 project template*](./pics/BlazorMauiProjectTemplate.png){.r-stretch}
+
 :::
 
 ::::
