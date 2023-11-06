@@ -1,11 +1,13 @@
 ---
-title: Blazor寫一次就討好 <br/> Web ＆ App 開發
+title: Blazor寫一次就討好 &nbsp;<br/>&nbsp; Web ＆ App 開發
 
 author: 老鮑伯
 format:
     # pptx:
     #    reference-doc: ../templates/template.pptx
     revealjs:
+        width: 1920
+        height: 1080
         slide-tone: false
         theme: simple
         menu:
@@ -168,29 +170,60 @@ else
 * Call .NET methods from JavaScript functions.
 * Using `[JSImport]` / `[JSExport]` attribute in Blazor WASM.(.NET 7+)
 
-## Blazor Hybrid on .NET MAUI
+## Blazor Hybrid on .NET MAUI {.smaller .scrollable}
 
 :::: {.columns}
 
-::: {.column width="60%"}
-
+::: {.column width="50%"}
 * The Blazor Hybrid can run on [.NET MAUI(Multi-platform App UI)](https://dotnet.microsoft.com/apps/maui) / [WPF](https://github.com/dotnet/wpf) / [Winform](https://github.com/dotnet/winforms) Native apps.
-* We can use the same Blazor source code to build Web and App.  
-(Reuse UI)
-
+* We can use the same Blazor source code to build Web and App.(Reusable UI)
 :::
 
-::: {.column width="40%"}
-
+::: {.column width="50%"}
 ![*VS 2022 project template*](./pics/BlazorMauiProjectTemplate.png){.r-stretch}
+:::
+
+::::
+
+## Reuse UI for Web & App via RCL {.smaller .scrollable}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+By using [Razor Class Library(RCL)](https://learn.microsoft.com/aspnet/core/razor-pages/ui-class) to share UI components between Web and App.
+
+::: 
+
+::: {.column width="50%"}
+
+::: {.r-stack}
+![](./pics/Web_and_App_screenshot.png)
+
+::: {.r-hstack}
+![](./pics/left_up_arrow_line.png)
+![](./pics/right_up_arrow_line.png)
+:::
+
+![](./pics/RCL_project_template.png)
+:::
 
 :::
 
 ::::
 
-## Reuse UI for Web & App via RCL
+## Project setup {.smaller .scrollable}
 
-
+1. 建立MAUI (with Hybrid Blazor)專案
+2. 建立RCL(Razor Class Library)專案，並將其加入MAUI專案的專案引用(Project Reference)
+3. 將MAUI專案中Blazor相關目錄&檔案搬移到RCL專案中
+4. 修改還留在MAUI專案中的必要Blazor所需檔案內容，包括網頁靜態資源引用路徑、Blazor路由元件增加”AdditionalAssemblies”屬性設定
+5. 啟動MAUI專案驗證功能是否正常
+6. 用Visual Studio 2022專案精靈建立WASM Blazor專案及配套來跑的asp.net core測試後端
+7. 將RCL專案加入到WASM Blazor專案的專案引用
+8. 搬移WASM Blazor專案與Razor頁面相關之目錄＆檔案，與RCL專案中既有的合併
+9. 修改還留在WASM Blazor專案中的必要Blazor所需檔案內容，包括網頁靜態資源引用路徑、Blazor路由元件增加”AdditionalAssemblies”屬性設定
+10. 個別啟動WASM Blazor、MAUI專案，驗證功能均可正常運作
 
 # WebRTC demo project
 
