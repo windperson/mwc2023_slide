@@ -1,5 +1,5 @@
 ---
-title: Blazor寫一次就討好lt;br/&gt; Web ＆ App 開發
+title: Blazor寫一次就討好 <br/> Web ＆ App 開發
 
 author: 老鮑伯
 format:
@@ -44,13 +44,11 @@ format:
 
 ::::
 
-## Razor components
+## Razor components {.smaller .scrollable}
 
 A self-contained chunk of user interface (UI), such as a page, dialog, or form.
 
 Includes HTML markup and the processing logic required to inject data or respond to UI events.
-
-::: {.smaller .scrollable}
 
 - using **`.razor`** file extension:
    - (Optional) routing tag helpers (`@page`) or `@layout` directive
@@ -58,7 +56,6 @@ Includes HTML markup and the processing logic required to inject data or respond
    - Razor syntax code to present HTML & Razor components (may mixed C# code)
    - `@code` block for C# code
 
-:::
 
 ## Razor components example {.smaller .scrollable}
 
