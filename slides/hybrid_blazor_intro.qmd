@@ -6,9 +6,9 @@ format:
     # pptx:
     #    reference-doc: ../templates/template.pptx
     revealjs:
-        width: 1920
-        height: 1080
-        margin: 0.3
+        width: 1680
+        height: 1050
+        margin: 0.2
         slide-tone: false
         theme: simple
         menu:
@@ -60,7 +60,7 @@ Includes HTML markup and the processing logic required to inject data or respond
    - `@code` block for C# code
 
 
-## Razor components example {.smaller .scrollable}
+## Razor components example {.scrollable}
 
 ```{.razor code-line-numbers="|1-3|5-38|40-47"}
 @page "/fetchdata"
@@ -171,7 +171,7 @@ else
 * Call .NET methods from JavaScript functions.
 * Using `[JSImport]` / `[JSExport]` attribute in Blazor WASM.(.NET 7+)
 
-## Blazor Hybrid on .NET MAUI {.smaller .scrollable}
+## Blazor Hybrid on .NET MAUI {.scrollable}
 
 :::: {.columns}
 
