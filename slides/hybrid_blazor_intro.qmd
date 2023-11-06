@@ -198,14 +198,7 @@ By using [Razor Class Library(RCL)](https://learn.microsoft.com/aspnet/core/razo
 
 ::: {.column width="50%"}
 
-![](./pics/Web_and_App_screenshot.png)
-
-::: {.r-hstack}
-![](./pics/left_up_arrow_line.png)
-![](./pics/right_up_arrow_line.png)
-:::
-
-![](./pics/RCL_project_template.png)
+![](./pics/Using_RCL_share_UI.png)
 
 :::
 
