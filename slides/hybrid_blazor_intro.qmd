@@ -1,5 +1,6 @@
 ---
-title: "Blazor寫一次就討好<br/> Web ＆ App 開發"
+title: | Blazor寫一次就討好 
+| Web ＆ App 開發
 author: "老鮑伯"
 format:
     # pptx:
@@ -43,9 +44,10 @@ format:
 
 ::::
 
-## Razor components {.smaller}
+## Razor components
 
-A self-contained chunk of user interface (UI), such as a page, dialog, or form.  
+A self-contained chunk of user interface (UI), such as a page, dialog, or form.
+
 Includes HTML markup and the processing logic required to inject data or respond to UI events.
 
 :::: {.columns .smaller .scrollable}
