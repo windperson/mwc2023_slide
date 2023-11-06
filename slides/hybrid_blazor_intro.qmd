@@ -56,10 +56,20 @@ format:
 
 ## Blazor Hybrid on .NET MAUI
 
-* The Blazor Hybrid can run on  .NET MAUI / WPF / Winform Native apps.
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* The Blazor Hybrid can run on [.NET MAUI(Multi-platform App UI)](https://dotnet.microsoft.com/apps/maui) / [WPF](https://github.com/dotnet/wpf) / [Winform](https://github.com/dotnet/winforms) Native apps.
 * We can use the same Blazor source code to build Web and App.
 
+:::
+
+::: {.column width="50%"}
 ![VS 2022 project template](./pics/BlazorMauiProjectTemplate.png)
+:::
+
+::::
 
 
 
