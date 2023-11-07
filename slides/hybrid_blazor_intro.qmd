@@ -32,7 +32,7 @@ format:
 ::: {.column width="70%"}
 
 * Component-based architecture
-* Different [hosting models](https://learn.microsoft.com/aspnet/core/blazor/hosting-models):
+* Different [hosting models](https://learn.microsoft.com/aspnet/core/blazor/hosting-models){target="_blank"}:
     * Blazor WebAssembly (Blazor WASM)
         * Blazor PWA (Progressive Web App)
         * **Blazor Hybrid**
@@ -169,7 +169,7 @@ button {
 
 ::::
 
-[https://github.com/windperson/DemoBlazorDynamicCss](https://github.com/windperson/DemoBlazorDynamicCss){:target="_blank"}
+[DemoBlazorDynamicCss](https://github.com/windperson/DemoBlazorDynamicCss){target="_blank"} example project
 
 ## Data binding
 
@@ -203,7 +203,7 @@ button {
 ## Routing and Layouts
 
 * For Browser's Url routing, using `@page` directive
-* [Kebab-case](https://developer.mozilla.org/docs/Glossary/Kebab_case) naming convention
+* [Kebab-case](https://developer.mozilla.org/docs/Glossary/Kebab_case){target="_blank"} naming convention
 
 ## Dependency injection
 
@@ -234,7 +234,7 @@ await builder.Build().RunAsync();
 :::: {.columns}
 
 ::: {.column width="50%"}
-* The Blazor Hybrid can run on [.NET MAUI(Multi-platform App UI)](https://dotnet.microsoft.com/apps/maui) / [WPF](https://github.com/dotnet/wpf) / [Winform](https://github.com/dotnet/winforms) Native apps.
+* The Blazor Hybrid can run on [.NET MAUI(Multi-platform App UI)](https://dotnet.microsoft.com/apps/maui){target="_blank"} / [WPF](https://github.com/dotnet/wpf){target="_blank"} / [Winform](https://github.com/dotnet/winforms){target="_blank"} Native apps.
 * We can use the same Blazor source code to build Web and App.(Reusable UI)
 :::
 
@@ -264,7 +264,7 @@ The Power of Blazor Hybrid on .NET MAUI is that we can call .NET MAUI API from B
 
 ::: {.column width="50%"}
 
-By using [Razor Class Library(RCL)](https://learn.microsoft.com/aspnet/core/razor-pages/ui-class) to share UI components between Web and App.
+By using [Razor Class Library(RCL)](https://learn.microsoft.com/aspnet/core/razor-pages/ui-class){target="_blank"} to share UI components between Web and App.
 
 ::: 
 
