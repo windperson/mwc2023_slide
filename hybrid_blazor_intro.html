@@ -594,7 +594,20 @@
 <ul>
 <li>For Browser’s Url routing, using <code>@page</code> directive</li>
 <li><a href="https://developer.mozilla.org/docs/Glossary/Kebab_case" target="_blank">Kebab-case</a> naming convention</li>
+<li>Provide a mechanism to show common error page when routing to a non-existing page</li>
 </ul>
+<div class="sourceCode" id="cb5" data-code-line-numbers="6-11"><pre class="sourceCode numberSource razor number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>&lt;Router AppAssembly="@typeof(App).Assembly"&gt;</span>
+<span id="cb5-2"><a href="#cb5-2"></a>    &lt;Found Context="routeData"&gt;</span>
+<span id="cb5-3"><a href="#cb5-3"></a>        &lt;RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" /&gt;</span>
+<span id="cb5-4"><a href="#cb5-4"></a>        &lt;FocusOnNavigate RouteData="@routeData" Selector="h1" /&gt;</span>
+<span id="cb5-5"><a href="#cb5-5"></a>    &lt;/Found&gt;</span>
+<span id="cb5-6"><a href="#cb5-6"></a>    &lt;NotFound&gt;</span>
+<span id="cb5-7"><a href="#cb5-7"></a>        &lt;PageTitle&gt;Not found&lt;/PageTitle&gt;</span>
+<span id="cb5-8"><a href="#cb5-8"></a>        &lt;LayoutView Layout="@typeof(MainLayout)"&gt;</span>
+<span id="cb5-9"><a href="#cb5-9"></a>            &lt;p role="alert"&gt;Sorry, there's nothing at this address.&lt;/p&gt;</span>
+<span id="cb5-10"><a href="#cb5-10"></a>        &lt;/LayoutView&gt;</span>
+<span id="cb5-11"><a href="#cb5-11"></a>    &lt;/NotFound&gt;</span>
+<span id="cb5-12"><a href="#cb5-12"></a>&lt;/Router&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="dependency-injection" class="slide level2">
 <h2>Dependency injection</h2>
@@ -602,16 +615,16 @@
 <li>Use the <code>@inject</code> directive to inject services into components.</li>
 <li>Co-operate with the .NET Core DI container.</li>
 </ul>
-<div class="sourceCode" id="cb5" data-code-line-numbers="5-8"><pre class="sourceCode numberSource cs number-lines code-with-copy"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1"></a><span class="dt">var</span> builder <span class="op">=</span> WebAssemblyHostBuilder<span class="op">.</span><span class="fu">CreateDefault</span><span class="op">(</span>args<span class="op">);</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="co">/* other builder config code*/</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a></span>
-<span id="cb5-5"><a href="#cb5-5"></a>builder<span class="op">.</span><span class="fu">Services</span><span class="op">.</span><span class="fu">AddScoped</span><span class="op">(</span>sp <span class="op">=&gt;</span> </span>
-<span id="cb5-6"><a href="#cb5-6"></a>    <span class="kw">new</span> HttpClient <span class="op">{</span> BaseAddress <span class="op">=</span> <span class="kw">new</span> <span class="fu">Uri</span><span class="op">(</span>builder<span class="op">.</span><span class="fu">HostEnvironment</span><span class="op">.</span><span class="fu">BaseAddress</span><span class="op">)</span> <span class="op">});</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a>builder<span class="op">.</span><span class="fu">Services</span><span class="op">.</span><span class="fu">AddScoped</span><span class="op">&lt;</span>IPlatformInfo<span class="op">,</span> PlatformInfo<span class="op">&gt;();</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a>builder<span class="op">.</span><span class="fu">Services</span><span class="op">.</span><span class="fu">AddScoped</span><span class="op">&lt;</span>BrowserService<span class="op">&gt;();</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a></span>
-<span id="cb5-10"><a href="#cb5-10"></a>await builder<span class="op">.</span><span class="fu">Build</span><span class="op">().</span><span class="fu">RunAsync</span><span class="op">();</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6" data-code-line-numbers="5-8"><pre class="sourceCode numberSource cs number-lines code-with-copy"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1"></a><span class="dt">var</span> builder <span class="op">=</span> WebAssemblyHostBuilder<span class="op">.</span><span class="fu">CreateDefault</span><span class="op">(</span>args<span class="op">);</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co">/* other builder config code*/</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a></span>
+<span id="cb6-5"><a href="#cb6-5"></a>builder<span class="op">.</span><span class="fu">Services</span><span class="op">.</span><span class="fu">AddScoped</span><span class="op">(</span>sp <span class="op">=&gt;</span> </span>
+<span id="cb6-6"><a href="#cb6-6"></a>    <span class="kw">new</span> HttpClient <span class="op">{</span> BaseAddress <span class="op">=</span> <span class="kw">new</span> <span class="fu">Uri</span><span class="op">(</span>builder<span class="op">.</span><span class="fu">HostEnvironment</span><span class="op">.</span><span class="fu">BaseAddress</span><span class="op">)</span> <span class="op">});</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>builder<span class="op">.</span><span class="fu">Services</span><span class="op">.</span><span class="fu">AddScoped</span><span class="op">&lt;</span>IPlatformInfo<span class="op">,</span> PlatformInfo<span class="op">&gt;();</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>builder<span class="op">.</span><span class="fu">Services</span><span class="op">.</span><span class="fu">AddScoped</span><span class="op">&lt;</span>BrowserService<span class="op">&gt;();</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a></span>
+<span id="cb6-10"><a href="#cb6-10"></a>await builder<span class="op">.</span><span class="fu">Build</span><span class="op">().</span><span class="fu">RunAsync</span><span class="op">();</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="javascript-interop" class="slide level2">
 <h2>JavaScript interop</h2>
