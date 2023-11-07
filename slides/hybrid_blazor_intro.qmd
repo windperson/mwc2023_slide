@@ -303,14 +303,14 @@ By using [Razor Class Library(RCL)](https://learn.microsoft.com/aspnet/core/razo
 6. 用 Visual Studio 2022 專案精靈建立 Blazor WASM 專案及搭配的 asp.net core 測試後端專案
 7. 將 RCL 專案加入到 Blazor WASM 專案的專案參考 (Project Reference)
 8. 搬移 Blazor WASM 專案與 Razor 頁面相關之目錄＆檔案，與 RCL 專案中既有的合併或調整
-9. 修改還留在 Blazor WASM 專案中的必要 Blazor 所需檔案內容，包括網頁靜態資源引用路徑、Blazor 路由元件增加 `AdditionalAssemblies` 屬性設定
+9. 修改還留在 Blazor WASM 專案組合中的必要 Blazor 所需檔案內容，包括網頁靜態資源引用路徑、Blazor 路由元件增加 `AdditionalAssemblies` 屬性設定，以及配套 asp.net core 後端專案移除掉不使用的 API Controller， `Program.cs` 修改為正確的 DI 服務設定
 10. 個別啟動 Blazor WASM、MAUI 專案，驗證功能均可正常運作
 
 ## Project setup - continued {.scrollable}
 
 - 步驟 6 在專案精靈記得不要選到空白專案，並且最後一步要指定使用 .NET 7，還有勾選『ASP.NET Core託管 (ASP.NET Core Hosted) 』以便產生完整含執行 WASM 之用的 ASP.NET Core 後端專案組合 
-    - 這麼做的目的是，.NET 7 的 Blazor WASM 完整專案範本產出來預設有『載入進度條』的新功能，此功能所需之 CSS 設定，得合併到 RCL 專案中原本從 MAUI 專案搬過來的 app.css 之中
-- 步驟 8 細部分解動作：
+    - 這麼做的目的是，.NET 7 的 Blazor WASM 完整專案範本產出來預設有『載入進度條』的新功能，此功能所需之 CSS 設定，得合併到 RCL 專案原本從 MAUI 專案搬過來的 app.css 之中
+- 步驟 8 細部動作：
     1. 由專案精靈新建立的 Blazor WASM Client 專案中的 *Pages*、*Shared* 目錄都刪除
     2. 將另一個用來在 Blazor WASM 專案組合中前後端共用的 Data Model (名稱末尾為 `.Shared`)類別庫(Class Library)專案也刪除 
     3. Blazor WASM Client 專案中 **wwwroot/css** 目錄內除了 **app.css** 之外的檔案複製到 RCL 專案中的 **wwwroot/css** 目錄內
@@ -359,6 +359,12 @@ app.css 70~101 行
     }
 ```
 
+## 
+
+完成後可以在 App, Web 都共用 RCL 專案裡定義的 Razor UI 頁面元件，達到 *寫一次就同時討好 Web & App 的 UI 開發*。 
+
+
+
 # WebRTC demo project
 
 ## Project structure
@@ -368,6 +374,7 @@ app.css 70~101 行
 ## Reference
 
 * [ASP.NET Core Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)
+* [Blazor Essentials](https://www.jetbrains.com/guide/dotnet/tutorials/blazor-essentials/)
 * [Introduction to WebRTC protocols](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Protocols)
 * [Udemy - AspNetCore Blazor:The Big Picture](https://www.udemy.com/course/aspnet-core-blazor-the-big-picture/)
 * [MS Learn - Build web applications with Blazor](https://learn.microsoft.com/en-us/training/paths/build-web-apps-with-blazor/)
