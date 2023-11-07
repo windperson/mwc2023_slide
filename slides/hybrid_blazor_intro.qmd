@@ -124,7 +124,7 @@ else
 
 :::
 
-## CSS/js isolation for components {.smaller .scrollable}
+## CSS isolation for components {.smaller .scrollable}
 
 * A "scoped" CSS file ( **.razor.css** ) can be added to a component to provide isolated CSS only for it.
 * Support CSS Variable, so we can programmatically change CSS style in C# code.
