@@ -25,7 +25,7 @@ format:
 
 ## What is (ASP.NET Core) Blazor
 
-**Singla Page Application(SPA)** frammework for building interactive client-side web UI using .NET 6+ C# without "*too much*" client-side JavaScript.
+**Singla Page Application(SPA)** frammework for building interactive client-side web UI using .NET Core/5+ C# without "*too much*" client-side JavaScript.
 
 :::: {.columns}
 
@@ -124,9 +124,52 @@ else
 
 :::
 
-## CSS/js isolation for components
+## CSS/js isolation for components {.smaller .scrollable}
 
-* A "scoped" CSS file ( **.razor.css** ) can be added to a component
+* A "scoped" CSS file ( **.razor.css** ) can be added to a component to provide isolated CSS only for it.
+* Support CSS Variable, so we can programmatically change CSS style in C# code.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+**Button.razor.css**
+```{.css}
+button {
+    width: var(--btn-width);
+    height: var(--btn-height);
+    font-size: var(--btn-fontSize);
+    color: var(--btn-foreground);
+    background-color: var(--btn-background);
+}
+```
+:::
+
+::: {.column width="50%"}
+
+**Button.razor**
+```{.razor}
+<button style="--btn-width:@CssAttributes.Width;
+               --btn-height:@CssAttributes.Height;
+               --btn-fontSize:@CssAttributes.FontSize;
+               --btn-foreground:@CssAttributes.ForegroundColor;
+               --btn-background:@CssAttributes.BackgroundColor;"
+        @onclick="MouseClick">
+    @Content
+</button>
+
+@code {
+    [Parameter]
+    public ButtonStyle CssAttributes { get; set; } = null!;
+
+    /* other code */
+}
+```
+:::
+
+::::
+
+<https://github.com/windperson/DemoBlazorDynamicCss>
 
 ## Data binding
 
