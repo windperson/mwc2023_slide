@@ -300,11 +300,64 @@ By using [Razor Class Library(RCL)](https://learn.microsoft.com/aspnet/core/razo
 3. 將 MAUI 專案中 Blazor 相關目錄&檔案搬移到 RCL 專案中
 4. 修改還留在 MAUI 專案中的必要 Blazor 所需檔案內容，包括網頁靜態資源引用路徑、Blazor 路由元件增加 [`AdditionalAssemblies`](https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.routing.router.additionalassemblies){target="_blank"} 屬性並指定至搬移到 RCL 專案的 MainLayout 元件
 5. 啟動 MAUI 專案驗證功能是否正常
-6. 用 Visual Studio 2022 專案精靈建立 Blazor WASM 專案及配套來跑的 asp.net core 測試後端專案
+6. 用 Visual Studio 2022 專案精靈建立 Blazor WASM 專案及搭配的 asp.net core 測試後端專案
 7. 將 RCL 專案加入到 Blazor WASM 專案的專案參考 (Project Reference)
-8. 搬移 Blazor WASM 專案與 Razor 頁面相關之目錄＆檔案，覆蓋掉與 RCL 專案中既有的 CSS/js 檔案
+8. 搬移 Blazor WASM 專案與 Razor 頁面相關之目錄＆檔案，與 RCL 專案中既有的合併或調整
 9. 修改還留在 Blazor WASM 專案中的必要 Blazor 所需檔案內容，包括網頁靜態資源引用路徑、Blazor 路由元件增加 `AdditionalAssemblies` 屬性設定
 10. 個別啟動 Blazor WASM、MAUI 專案，驗證功能均可正常運作
+
+## Project setup - continued {.scrollable}
+
+- 步驟 6 在專案精靈記得不要選到空白專案，並且最後一步要指定使用 .NET 7，還有勾選『ASP.NET Core託管 (ASP.NET Core Hosted) 』以便產生完整含執行 WASM 之用的 ASP.NET Core 後端專案組合 
+    - 這麼做的目的是，.NET 7 的 Blazor WASM 完整專案範本產出來預設有『載入進度條』的新功能，此功能所需之 CSS 設定，得合併到 RCL 專案中原本從 MAUI 專案搬過來的 app.css 之中
+- 步驟 8 細部分解動作：
+    1. 由專案精靈新建立的 Blazor WASM Client 專案中的 *Pages*、*Shared* 目錄都刪除
+    2. 將另一個用來在 Blazor WASM 專案組合中前後端共用的 Data Model (名稱末尾為 `.Shared`)類別庫(Class Library)專案也刪除 
+    3. Blazor WASM Client 專案中 **wwwroot/css** 目錄內除了 **app.css** 之外的檔案複製到 RCL 專案中的 **wwwroot/css** 目錄內
+    4. Blazor WASM Client 專案中 **wwwroot/css/app.css** 檔案的部分內容抄寫到 RCL 專案中 **wwwroot/css/app.css** 檔案內
+
+app.css 21~23 行
+```{.css}
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+```
+
+app.css 70~101 行
+```{.css}
+.loading-progress {
+    position: relative;
+    display: block;
+    width: 8rem;
+    height: 8rem;
+    margin: 20vh auto 1rem auto;
+}
+
+    .loading-progress circle {
+        fill: none;
+        stroke: #e0e0e0;
+        stroke-width: 0.6rem;
+        transform-origin: 50% 50%;
+        transform: rotate(-90deg);
+    }
+
+        .loading-progress circle:last-child {
+            stroke: #1b6ec2;
+            stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
+            transition: stroke-dasharray 0.05s ease-in-out;
+        }
+
+.loading-progress-text {
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    inset: calc(20vh + 3.25rem) 0 auto 0.2rem;
+}
+
+    .loading-progress-text:after {
+        content: var(--blazor-load-percentage-text, "Loading");
+    }
+```
 
 # WebRTC demo project
 
