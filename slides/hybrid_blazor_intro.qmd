@@ -6,7 +6,7 @@ format:
     # pptx:
     #    reference-doc: ../templates/template.pptx
     revealjs:
-        width: 1680
+        width: 1700
         height: 1050
         margin: 0.2
         slide-tone: false
@@ -43,7 +43,7 @@ format:
 
 ::: {.column width="30%"}
 
-![<https://wikipedia.org/wiki/Blazor>](./pics/Blazor.png)
+![[https://wikipedia.org/wiki/Blazor](https://wikipedia.org/wiki/Blazor){target="_blank"}](./pics/Blazor.png)
 
 :::
 
@@ -128,7 +128,7 @@ else
 
 A "scoped" CSS file ( **.razor.css** ) can be added to a component to provide isolated CSS only for it.
 
-Support [CSS Variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties){taget="_blank"}, so we can programmatically change CSS style in C# code.
+Support [CSS Variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties){target="_blank"}, so we can programmatically change CSS style in C# code.
 
 :::: {.columns}
 
