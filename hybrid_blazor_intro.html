@@ -675,16 +675,16 @@
 <section id="project-setup" class="slide level2 scrollable">
 <h2>Project setup</h2>
 <ol type="1">
-<li>建立MAUI (with Hybrid Blazor)專案</li>
-<li>建立RCL(Razor Class Library)專案，並將其加入MAUI專案的專案引用(Project Reference)</li>
-<li>將MAUI專案中Blazor相關目錄&amp;檔案搬移到RCL專案中</li>
-<li>修改還留在MAUI專案中的必要Blazor所需檔案內容，包括網頁靜態資源引用路徑、Blazor路由元件增加”AdditionalAssemblies”屬性設定</li>
-<li>啟動MAUI專案驗證功能是否正常</li>
-<li>用Visual Studio 2022專案精靈建立WASM Blazor專案及配套來跑的asp.net core測試後端</li>
-<li>將RCL專案加入到WASM Blazor專案的專案引用</li>
-<li>搬移WASM Blazor專案與Razor頁面相關之目錄＆檔案，與RCL專案中既有的合併</li>
-<li>修改還留在WASM Blazor專案中的必要Blazor所需檔案內容，包括網頁靜態資源引用路徑、Blazor路由元件增加”AdditionalAssemblies”屬性設定</li>
-<li>個別啟動WASM Blazor、MAUI專案，驗證功能均可正常運作</li>
+<li>建立 MAUI (with Hybrid Blazor) 專案</li>
+<li>建立 RCL(Razor Class Library) 專案，並將其加入 MAUI 專案的<a href="https://learn.microsoft.com/visualstudio/ide/managing-references-in-a-project?view=vs-2022" target="_blank">專案參考 (Project Reference)</a></li>
+<li>將 MAUI 專案中 Blazor 相關目錄&amp;檔案搬移到 RCL 專案中</li>
+<li>修改還留在 MAUI 專案中的必要 Blazor 所需檔案內容，包括網頁靜態資源引用路徑、Blazor 路由元件增加 <a href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.routing.router.additionalassemblies" target="_blank"><code>AdditionalAssemblies</code></a> 屬性並指定至搬移到 RCL 專案的 MainLayout 元件</li>
+<li>啟動 MAUI 專案驗證功能是否正常</li>
+<li>用 Visual Studio 2022 專案精靈建立 Blazor WASM 專案及配套來跑的 asp.net core 測試後端專案</li>
+<li>將 RCL 專案加入到 Blazor WASM 專案的專案參考 (Project Reference)</li>
+<li>搬移 Blazor WASM 專案與 Razor 頁面相關之目錄＆檔案，覆蓋掉與 RCL 專案中既有的 CSS/js 檔案</li>
+<li>修改還留在 Blazor WASM 專案中的必要 Blazor 所需檔案內容，包括網頁靜態資源引用路徑、Blazor 路由元件增加 <code>AdditionalAssemblies</code> 屬性設定</li>
+<li>個別啟動 Blazor WASM、MAUI 專案，驗證功能均可正常運作</li>
 </ol>
 </section></section>
 <section>
