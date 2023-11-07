@@ -33,9 +33,11 @@ format:
 
 * Component-based architecture
 * Different [hosting models](https://learn.microsoft.com/aspnet/core/blazor/hosting-models):
-    * Blazor WebAssembly(Blazor WASM)
-        * Blazor Hybrid
+    * Blazor WebAssembly (Blazor WASM)
+        * Blazor PWA (Progressive Web App)
+        * **Blazor Hybrid**
     * Blazor Server
+    * United in .NET 8 : *static server rendering*, *streaming rendering*, *interactive rendering(prerender)*
 
 :::
 
