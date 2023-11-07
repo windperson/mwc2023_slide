@@ -415,7 +415,7 @@
 </section>
 <section id="what-is-asp.net-core-blazor" class="slide level2">
 <h2>What is (ASP.NET Core) Blazor</h2>
-<p><strong>Singla Page Application(SPA)</strong> frammework for building interactive client-side web UI using .NET 6+ C# without “<em>too much</em>” client-side JavaScript.</p>
+<p><strong>Singla Page Application(SPA)</strong> frammework for building interactive client-side web UI using .NET Core/5+ C# without “<em>too much</em>” client-side JavaScript.</p>
 <div class="columns">
 <div class="column" style="width:70%;">
 <ul>
@@ -525,11 +525,42 @@
 </div>
 </div>
 </section>
-<section id="cssjs-isolation-for-components" class="slide level2">
-<h2>CSS/js isolation for components</h2>
+<section id="css-isolation-for-components" class="slide level2 smaller scrollable">
+<h2>CSS isolation for components</h2>
 <ul>
-<li>A “scoped” CSS file ( <strong>.razor.css</strong> ) can be added to a component</li>
+<li>A “scoped” CSS file ( <strong>.razor.css</strong> ) can be added to a component to provide isolated CSS only for it.</li>
+<li>Support CSS Variable, so we can programmatically change CSS style in C# code.</li>
 </ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Button.razor.css</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1"></a>button {</span>
+<span id="cb2-2"><a href="#cb2-2"></a>    <span class="kw">width</span>: <span class="fu">var(</span><span class="va">--btn-width</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>    <span class="kw">height</span>: <span class="fu">var(</span><span class="va">--btn-height</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>    <span class="kw">font-size</span>: <span class="fu">var(</span><span class="va">--btn-fontSize</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>    <span class="kw">color</span>: <span class="fu">var(</span><span class="va">--btn-foreground</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>    <span class="kw">background-color</span>: <span class="fu">var(</span><span class="va">--btn-background</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<p><strong>Button.razor</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource razor number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>&lt;button style="--btn-width:@CssAttributes.Width;</span>
+<span id="cb3-2"><a href="#cb3-2"></a>               --btn-height:@CssAttributes.Height;</span>
+<span id="cb3-3"><a href="#cb3-3"></a>               --btn-fontSize:@CssAttributes.FontSize;</span>
+<span id="cb3-4"><a href="#cb3-4"></a>               --btn-foreground:@CssAttributes.ForegroundColor;</span>
+<span id="cb3-5"><a href="#cb3-5"></a>               --btn-background:@CssAttributes.BackgroundColor;"</span>
+<span id="cb3-6"><a href="#cb3-6"></a>        @onclick="MouseClick"&gt;</span>
+<span id="cb3-7"><a href="#cb3-7"></a>    @Content</span>
+<span id="cb3-8"><a href="#cb3-8"></a>&lt;/button&gt;</span>
+<span id="cb3-9"><a href="#cb3-9"></a></span>
+<span id="cb3-10"><a href="#cb3-10"></a>@code {</span>
+<span id="cb3-11"><a href="#cb3-11"></a>    [Parameter]</span>
+<span id="cb3-12"><a href="#cb3-12"></a>    public ButtonStyle CssAttributes { get; set; } = null!;</span>
+<span id="cb3-13"><a href="#cb3-13"></a></span>
+<span id="cb3-14"><a href="#cb3-14"></a>    /* other code */</span>
+<span id="cb3-15"><a href="#cb3-15"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p><a href="https://github.com/windperson/DemoBlazorDynamicCss" class="uri">https://github.com/windperson/DemoBlazorDynamicCss</a></p>
 </section>
 <section id="data-binding" class="slide level2">
 <h2>Data binding</h2>
@@ -541,24 +572,24 @@
 </section>
 <section id="event-binding-example" class="slide level2 scrollable">
 <h2>Event binding example</h2>
-<div class="sourceCode" id="cb2" data-code-line-numbers="9,14-17"><pre class="sourceCode numberSource razor number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>@page "/counter"</span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a>&lt;PageTitle&gt;Counter&lt;/PageTitle&gt;</span>
-<span id="cb2-4"><a href="#cb2-4"></a></span>
-<span id="cb2-5"><a href="#cb2-5"></a>&lt;h1&gt;Counter&lt;/h1&gt;</span>
-<span id="cb2-6"><a href="#cb2-6"></a></span>
-<span id="cb2-7"><a href="#cb2-7"></a>&lt;p role="status"&gt;Current count: @currentCount&lt;/p&gt;</span>
-<span id="cb2-8"><a href="#cb2-8"></a></span>
-<span id="cb2-9"><a href="#cb2-9"></a>&lt;button class="btn btn-primary" @onclick="IncrementCount"&gt;Click me&lt;/button&gt;</span>
-<span id="cb2-10"><a href="#cb2-10"></a></span>
-<span id="cb2-11"><a href="#cb2-11"></a>@code {</span>
-<span id="cb2-12"><a href="#cb2-12"></a>    private int currentCount = 0;</span>
-<span id="cb2-13"><a href="#cb2-13"></a></span>
-<span id="cb2-14"><a href="#cb2-14"></a>    private void IncrementCount()</span>
-<span id="cb2-15"><a href="#cb2-15"></a>    {</span>
-<span id="cb2-16"><a href="#cb2-16"></a>        currentCount++;</span>
-<span id="cb2-17"><a href="#cb2-17"></a>    }</span>
-<span id="cb2-18"><a href="#cb2-18"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4" data-code-line-numbers="9,14-17"><pre class="sourceCode numberSource razor number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>@page "/counter"</span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a>&lt;PageTitle&gt;Counter&lt;/PageTitle&gt;</span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a>&lt;h1&gt;Counter&lt;/h1&gt;</span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a>&lt;p role="status"&gt;Current count: @currentCount&lt;/p&gt;</span>
+<span id="cb4-8"><a href="#cb4-8"></a></span>
+<span id="cb4-9"><a href="#cb4-9"></a>&lt;button class="btn btn-primary" @onclick="IncrementCount"&gt;Click me&lt;/button&gt;</span>
+<span id="cb4-10"><a href="#cb4-10"></a></span>
+<span id="cb4-11"><a href="#cb4-11"></a>@code {</span>
+<span id="cb4-12"><a href="#cb4-12"></a>    private int currentCount = 0;</span>
+<span id="cb4-13"><a href="#cb4-13"></a></span>
+<span id="cb4-14"><a href="#cb4-14"></a>    private void IncrementCount()</span>
+<span id="cb4-15"><a href="#cb4-15"></a>    {</span>
+<span id="cb4-16"><a href="#cb4-16"></a>        currentCount++;</span>
+<span id="cb4-17"><a href="#cb4-17"></a>    }</span>
+<span id="cb4-18"><a href="#cb4-18"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="routing-and-layouts" class="slide level2">
 <h2>Routing and Layouts</h2>
@@ -573,16 +604,16 @@
 <li>Use the <code>@inject</code> directive to inject services into components.</li>
 <li>Co-operate with the .NET Core DI container.</li>
 </ul>
-<div class="sourceCode" id="cb3" data-code-line-numbers="5-8"><pre class="sourceCode numberSource cs number-lines code-with-copy"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1"></a><span class="dt">var</span> builder <span class="op">=</span> WebAssemblyHostBuilder<span class="op">.</span><span class="fu">CreateDefault</span><span class="op">(</span>args<span class="op">);</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="co">/* other builder config code*/</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a></span>
-<span id="cb3-5"><a href="#cb3-5"></a>builder<span class="op">.</span><span class="fu">Services</span><span class="op">.</span><span class="fu">AddScoped</span><span class="op">(</span>sp <span class="op">=&gt;</span> </span>
-<span id="cb3-6"><a href="#cb3-6"></a>    <span class="kw">new</span> HttpClient <span class="op">{</span> BaseAddress <span class="op">=</span> <span class="kw">new</span> <span class="fu">Uri</span><span class="op">(</span>builder<span class="op">.</span><span class="fu">HostEnvironment</span><span class="op">.</span><span class="fu">BaseAddress</span><span class="op">)</span> <span class="op">});</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a>builder<span class="op">.</span><span class="fu">Services</span><span class="op">.</span><span class="fu">AddScoped</span><span class="op">&lt;</span>IPlatformInfo<span class="op">,</span> PlatformInfo<span class="op">&gt;();</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a>builder<span class="op">.</span><span class="fu">Services</span><span class="op">.</span><span class="fu">AddScoped</span><span class="op">&lt;</span>BrowserService<span class="op">&gt;();</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a></span>
-<span id="cb3-10"><a href="#cb3-10"></a>await builder<span class="op">.</span><span class="fu">Build</span><span class="op">().</span><span class="fu">RunAsync</span><span class="op">();</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5" data-code-line-numbers="5-8"><pre class="sourceCode numberSource cs number-lines code-with-copy"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1"></a><span class="dt">var</span> builder <span class="op">=</span> WebAssemblyHostBuilder<span class="op">.</span><span class="fu">CreateDefault</span><span class="op">(</span>args<span class="op">);</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co">/* other builder config code*/</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a>builder<span class="op">.</span><span class="fu">Services</span><span class="op">.</span><span class="fu">AddScoped</span><span class="op">(</span>sp <span class="op">=&gt;</span> </span>
+<span id="cb5-6"><a href="#cb5-6"></a>    <span class="kw">new</span> HttpClient <span class="op">{</span> BaseAddress <span class="op">=</span> <span class="kw">new</span> <span class="fu">Uri</span><span class="op">(</span>builder<span class="op">.</span><span class="fu">HostEnvironment</span><span class="op">.</span><span class="fu">BaseAddress</span><span class="op">)</span> <span class="op">});</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a>builder<span class="op">.</span><span class="fu">Services</span><span class="op">.</span><span class="fu">AddScoped</span><span class="op">&lt;</span>IPlatformInfo<span class="op">,</span> PlatformInfo<span class="op">&gt;();</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a>builder<span class="op">.</span><span class="fu">Services</span><span class="op">.</span><span class="fu">AddScoped</span><span class="op">&lt;</span>BrowserService<span class="op">&gt;();</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a></span>
+<span id="cb5-10"><a href="#cb5-10"></a>await builder<span class="op">.</span><span class="fu">Build</span><span class="op">().</span><span class="fu">RunAsync</span><span class="op">();</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="javascript-interop" class="slide level2">
 <h2>JavaScript interop</h2>
