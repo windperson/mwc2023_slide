@@ -186,6 +186,20 @@ else
 
 ::::
 
+---
+
+:::: {.columns}
+
+::: {.column width="50%"}
+The Power of Blazor Hybrid on .NET MAUI is that we can call .NET MAUI API from Blazor `@code` block.
+:::
+
+::: {.column width="50%"}
+![](./pics/Blazor_Hybrid_OnMAUI.png){.r-stretch}
+:::
+
+::::
+
 ## Reuse UI for Web & App via RCL {.scrollable}
 
 :::: {.columns}
@@ -198,7 +212,7 @@ By using [Razor Class Library(RCL)](https://learn.microsoft.com/aspnet/core/razo
 
 ::: {.column width="50%"}
 
-![](./pics/Using_RCL_share_UI.png)
+![](./pics/Using_RCL_share_UI.png){.r-stretch}
 
 :::
 
