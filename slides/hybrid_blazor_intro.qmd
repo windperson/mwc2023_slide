@@ -361,9 +361,9 @@ app.css 70~101 行
 
 ## 
 
-完成後可以在 App, Web 都共用 RCL 專案裡定義的 Razor UI 頁面元件，達到 *寫一次就同時討好 Web & App 的 UI 開發*。 
+完成後可以在 App, Web 都共用 RCL 專案裡定義的 Razor UI 頁面元件， *寫一次就同時討好 Web & App 的 UI 開發*。 
 
-
+![](./pics/Demo_Shared_RCL_UI.png)
 
 # WebRTC demo project
 
