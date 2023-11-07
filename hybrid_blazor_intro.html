@@ -683,7 +683,7 @@
 <li>用 Visual Studio 2022 專案精靈建立 Blazor WASM 專案及搭配的 asp.net core 測試後端專案</li>
 <li>將 RCL 專案加入到 Blazor WASM 專案的專案參考 (Project Reference)</li>
 <li>搬移 Blazor WASM 專案與 Razor 頁面相關之目錄＆檔案，與 RCL 專案中既有的合併或調整</li>
-<li>修改還留在 Blazor WASM 專案中的必要 Blazor 所需檔案內容，包括網頁靜態資源引用路徑、Blazor 路由元件增加 <code>AdditionalAssemblies</code> 屬性設定</li>
+<li>修改還留在 Blazor WASM 專案組合中的必要 Blazor 所需檔案內容，包括網頁靜態資源引用路徑、Blazor 路由元件增加 <code>AdditionalAssemblies</code> 屬性設定，以及配套 asp.net core 後端專案移除掉不使用的 API Controller， <code>Program.cs</code> 修改為正確的 DI 服務設定</li>
 <li>個別啟動 Blazor WASM、MAUI 專案，驗證功能均可正常運作</li>
 </ol>
 </section>
@@ -692,9 +692,9 @@
 <ul>
 <li>步驟 6 在專案精靈記得不要選到空白專案，並且最後一步要指定使用 .NET 7，還有勾選『ASP.NET Core託管 (ASP.NET Core Hosted) 』以便產生完整含執行 WASM 之用的 ASP.NET Core 後端專案組合
 <ul>
-<li>這麼做的目的是，.NET 7 的 Blazor WASM 完整專案範本產出來預設有『載入進度條』的新功能，此功能所需之 CSS 設定，得合併到 RCL 專案中原本從 MAUI 專案搬過來的 app.css 之中</li>
+<li>這麼做的目的是，.NET 7 的 Blazor WASM 完整專案範本產出來預設有『載入進度條』的新功能，此功能所需之 CSS 設定，得合併到 RCL 專案原本從 MAUI 專案搬過來的 app.css 之中</li>
 </ul></li>
-<li>步驟 8 細部分解動作：
+<li>步驟 8 細部動作：
 <ol type="1">
 <li>由專案精靈新建立的 Blazor WASM Client 專案中的 <em>Pages</em>、<em>Shared</em> 目錄都刪除</li>
 <li>將另一個用來在 Blazor WASM 專案組合中前後端共用的 Data Model (名稱末尾為 <code>.Shared</code>)類別庫(Class Library)專案也刪除</li>
@@ -739,6 +739,10 @@
 <span id="cb8-30"><a href="#cb8-30"></a>    <span class="fu">.loading-progress-text</span><span class="in">:after</span> {</span>
 <span id="cb8-31"><a href="#cb8-31"></a>        <span class="kw">content</span>: <span class="fu">var(</span><span class="va">--blazor-load-percentage-text</span><span class="op">,</span> <span class="st">"Loading"</span><span class="fu">)</span><span class="op">;</span></span>
 <span id="cb8-32"><a href="#cb8-32"></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p>完成後可以在 App, Web 都共用 RCL 專案裡定義的 Razor UI 頁面元件，達到 <em>寫一次就同時討好 Web &amp; App 的 UI 開發</em>。</p>
 </section></section>
 <section>
 <section id="webrtc-demo-project" class="title-slide slide level1 center">
@@ -757,6 +761,7 @@
 <h2>Reference</h2>
 <ul>
 <li><a href="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor">ASP.NET Core Blazor</a></li>
+<li><a href="https://www.jetbrains.com/guide/dotnet/tutorials/blazor-essentials/">Blazor Essentials</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Protocols">Introduction to WebRTC protocols</a></li>
 <li><a href="https://www.udemy.com/course/aspnet-core-blazor-the-big-picture/">Udemy - AspNetCore Blazor:The Big Picture</a></li>
 <li><a href="https://learn.microsoft.com/en-us/training/paths/build-web-apps-with-blazor/">MS Learn - Build web applications with Blazor</a></li>
