@@ -155,9 +155,9 @@ else
 }
 ```
 
-
 ## Routing and Layouts
 
+* For Browser's Url routing, using `@page` directive
 * [Kebab-case](https://developer.mozilla.org/docs/Glossary/Kebab_case) naming convention
 
 ## Dependency injection
@@ -165,11 +165,24 @@ else
 * Use the `@inject` directive to inject services into components.
 * Co-operate with the .NET Core DI container.
 
+```{.cs code-line-numbers="5-8"}
+var builder = WebAssemblyHostBuilder.CreateDefault(args);
+
+/* other builder config code*/
+
+builder.Services.AddScoped(sp => 
+    new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+builder.Services.AddScoped<IPlatformInfo, PlatformInfo>();
+builder.Services.AddScoped<BrowserService>();
+
+await builder.Build().RunAsync();
+```
+
 ## JavaScript interop
 
-* Call JavaScript functions from .NET methods.
-* Call .NET methods from JavaScript functions.
-* Using `[JSImport]` / `[JSExport]` attribute in Blazor WASM.(.NET 7+)
+* Call JavaScript function from .NET method
+* Call .NET method from JavaScript function
+* Using `[JSImport]` / `[JSExport]` attribute in Blazor WASM(.NET 7+)
 
 ## Blazor Hybrid on .NET MAUI {.scrollable}
 
