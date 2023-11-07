@@ -205,6 +205,22 @@ button {
 
 * For Browser's Url routing, using `@page` directive
 * [Kebab-case](https://developer.mozilla.org/docs/Glossary/Kebab_case){target="_blank"} naming convention
+* Provide a mechanism to show common error page when routing to a non-existing page
+
+```{.razor code-line-numbers="6-11"}
+<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <PageTitle>Not found</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <p role="alert">Sorry, there's nothing at this address.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
+```
 
 ## Dependency injection
 
