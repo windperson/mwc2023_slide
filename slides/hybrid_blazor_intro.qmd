@@ -18,10 +18,18 @@ format:
 
 ## Agenda
 
-![](URL.svg){.r-stretch}
+::: {.r-stretch}
+
+![](URL.svg)
+
+::: 
 
 * Blazor Introduction
 * WebRTC demo project
+
+Slides made by [**Quarto**](https://quarto.org){target="_blank"} & GitHub Action: 
+
+[https://github.com/windperson/mwc2023_slide](https://github.com/windperson/mwc2023_slide){target="_blank"}
 
 # Blazor Introduction
 
