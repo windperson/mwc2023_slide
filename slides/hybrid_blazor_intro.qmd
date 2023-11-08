@@ -367,7 +367,16 @@ app.css 70~101 行
 
 # WebRTC demo project
 
+## {.r-stretch}
+
+![](./pics/Blazor_WebRTC_demo.png)
+
+
 ## Project structure
+
+source: <https://github.com/windperson/MWC2023WebRtcDemo>
+
+Try to follow the [BlazorRtc](https://github.com/ParrhesiaJoe/BlazorRtc){target="_blank"} a Blazor WASM WebRTC demo project, but apply on Blazor Hybrid.
 
 # Conclusion
 
