@@ -248,6 +248,11 @@ await builder.Build().RunAsync();
 * [Call .NET method from JavaScript function](https://learn.microsoft.com/aspnet/core/blazor/javascript-interoperability/call-dotnet-from-javascript){target="_blank"}
 * Using `[JSImport]` / `[JSExport]` attribute in Blazor WASM(.NET 7+)
 
+We can use Js Interop to co-operate something that Blazor doesn't support yet, such as [WebRTC](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API){target="_blank"} or [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API){target="_blank"}.
+
+[Three.js interop demo](https://github.com/windperson/MauiBlazorThreeJsDemo){target="_blank"}
+
+
 ## Blazor Hybrid on .NET MAUI {.scrollable}
 
 :::: {.columns}
