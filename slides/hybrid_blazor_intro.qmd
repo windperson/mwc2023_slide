@@ -18,6 +18,8 @@ format:
 
 ## Agenda
 
+![](URL.svg){.r-stretch}
+
 * Blazor Introduction
 * WebRTC demo project
 
