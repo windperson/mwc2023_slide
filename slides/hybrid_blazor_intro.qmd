@@ -398,11 +398,16 @@ Try to follow the [BlazorRtc](https://github.com/ParrhesiaJoe/BlazorRtc){target=
 * Use routing to switch to different Razor components without dependency
 * Layout Icon is from [OpenIconic](https://www.appstudio.dev/app/OpenIconic.html){target="_blank"} , not Bootstrap Icons.
 * You will got lot of trouble when trying to use some bizarre Js API or need to get around permission problems on MAUI side.
-* The js code is messy, GitHub Copilot Chat is merrily to help you :computer:
+
+## WebRTC
+
+* The WebRTC API is accessed via js interop
+
+* The js code is messy, GitHub Copilot Chat is merrily to help you 🧑‍💻
 
 ![](./pics/Ask_copilot_for_answer.png){r-stretch}
 
-# Conclusion
+# Conclusion / Q & A
 
 ## Reference
 
