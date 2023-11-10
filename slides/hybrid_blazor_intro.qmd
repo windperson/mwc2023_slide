@@ -390,14 +390,14 @@ app.css 70~101 行
 
 ## 
 
-在 App, Web 都共用 RCL 專案裡定義的 Razor UI 頁面元件， *寫一次就同時討好 Web & App 的 UI 開發*。 
+在 App, Web 都共用 RCL 專案裡定義的 Razor UI 頁面元件，*寫一次就同時討好 Web & App 的 UI 開發*。 
 
 ![](./pics/Demo_Shared_RCL_UI.png)
 
 
-:::{ .center-xy style="font-size:0.8em;"}
+:::{ style="text-align: center;font-size:0.7em;"}
 
-[專案原始碼](https://github.com/windperson/MWC2023WebRtcDemo/tree/UI_shared){target="_blank"}
+[原始碼GitHub](https://github.com/windperson/MWC2023WebRtcDemo/tree/UI_shared){target="_blank"}
 
 :::
 
@@ -420,13 +420,20 @@ Try to follow the [BlazorRtc](https://github.com/ParrhesiaJoe/BlazorRtc){target=
 
 ## WebRTC
 
-* The WebRTC API is accessed via js interop
+* The WebRTC API is accessed via Js Interop
 
 * The js code is messy, GitHub Copilot Chat is merrily to help you 🧑‍💻
 
 ![](./pics/Ask_copilot_for_answer.png){r-stretch}
 
-# Conclusion / Q & A
+
+##
+
+:::{.center-xy style="font-size:2em;"}
+
+Conclusion &nbsp;<br/>&nbsp; Q & A
+
+:::
 
 ## Reference
 
