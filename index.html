@@ -384,6 +384,16 @@
       margin-right: 0; 
     }
   </style>
+  <style>
+  .center-xy {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translateY(-50%), translateX(-50%);
+  transform: translateY(-50%), translateX(-50%);
+  }
+  </style>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -749,7 +759,10 @@
 <h2></h2>
 <p>在 App, Web 都共用 RCL 專案裡定義的 Razor UI 頁面元件， <em>寫一次就同時討好 Web &amp; App 的 UI 開發</em>。</p>
 
-<img data-src="./pics/Demo_Shared_RCL_UI.png" class="r-stretch"></section></section>
+<img data-src="./pics/Demo_Shared_RCL_UI.png" class="r-stretch"><div class="center-xy" style="font-size:0.8em;">
+<p><a href="https://github.com/windperson/MWC2023WebRtcDemo/tree/UI_shared" target="_blank">專案原始碼</a></p>
+</div>
+</section></section>
 <section>
 <section id="webrtc-demo-project" class="title-slide slide level1 center">
 <h1>WebRTC demo project</h1>
