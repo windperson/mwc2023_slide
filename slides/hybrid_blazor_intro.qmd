@@ -390,7 +390,7 @@ app.css 70~101 行
 
 ## 
 
-在 App, Web 都共用 RCL 專案裡定義的 Razor UI 頁面元件，*寫一次就同時討好 Web & App 的 UI 開發*。 
+在 App, Web 都共用 RCL 專案裡定義的 Razor UI 頁面元件，*寫一次就同時討好 Web & App UI 開發*。 
 
 ![](./pics/Demo_Shared_RCL_UI.png)
 
@@ -426,14 +426,7 @@ Try to follow the [BlazorRtc](https://github.com/ParrhesiaJoe/BlazorRtc){target=
 
 ![](./pics/Ask_copilot_for_answer.png){r-stretch}
 
-
-##
-
-:::{.center-xy style="font-size:2em;"}
-
-Conclusion &nbsp;<br/>&nbsp; Q & A
-
-:::
+## Conclusion &nbsp;<br/>&nbsp; Q & A
 
 ## Reference
 
@@ -442,3 +435,4 @@ Conclusion &nbsp;<br/>&nbsp; Q & A
 * [Introduction to WebRTC protocols](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Protocols)
 * [Udemy - AspNetCore Blazor:The Big Picture](https://www.udemy.com/course/aspnet-core-blazor-the-big-picture/)
 * [MS Learn - Build web applications with Blazor](https://learn.microsoft.com/en-us/training/paths/build-web-apps-with-blazor/)
+* [(StackOverflow) Blazor MAUI - Camera and Microphone Android permissions](https://stackoverflow.com/a/75591585/1075882)
